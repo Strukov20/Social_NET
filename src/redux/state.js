@@ -46,8 +46,25 @@ let state = {
         { img: "https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg", id: "12", name: 'Vlad', surname: 'Halas' },
         { img: "https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg", id: "13", name: 'Alex', surname: 'Buriy' },
         { img: "https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg", id: "14", name: 'Bohdan', surname: 'Strukov' }
+    ],
+    news: [
+        {   id: "1",
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cum error fuga praesentium quisquam.Dolore illum incidunt minima modi perferendis.',
+            img: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" },
+        {   id: "2",
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cum error fuga praesentium quisquam.Dolore illum incidunt minima modi perferendis.',
+            img: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/1-cloudscape-canvas-pixabay.jpg" },
+        {   id: "3",
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cum error fuga praesentium quisquam.Dolore illum incidunt minima modi perferendis.',
+            img: "https://lh5.ggpht.com/-Ctv1m-63Q7Q/TozUCb70gQI/AAAAAAAAAfw/UQk-nUN3NHM/s1600/beautiful+nature+scenery-1.jpg" },
+        {   id: "4",
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cum error fuga praesentium quisquam.Dolore illum incidunt minima modi perferendis.',
+            img: "https://i2.wp.com/digital-photography-school.com/wp-content/uploads/2016/02/Barn-DPSexample.jpg?resize=717%2C478&ssl=1" },
+        {   id: "5",
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cum error fuga praesentium quisquam.Dolore illum incidunt minima modi perferendis.',
+            img: "https://cdn.pixabay.com/photo/2019/09/03/13/17/landscape-4449414_960_720.jpg" },
     ]
-}
+    }
 
 window.state = state;
 
