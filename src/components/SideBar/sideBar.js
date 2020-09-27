@@ -3,7 +3,7 @@ import {FriendItem} from "./friendItem";
 
 export const SideBar = (props) => {
 
-    const friendsElements = props.state.sideBar.map(src => <FriendItem name={src.name} surname={src.surname} img={src.img} />)
+    const friendsElements = props.state.sideBar.map(src => <FriendItem name={src.name} surname={src.surname} img={src.img} online={src.online} />)
 
 
 

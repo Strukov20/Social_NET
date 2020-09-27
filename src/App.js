@@ -26,7 +26,7 @@ const App = (props) => {
                                    addPost={props.addPost}
                                    updateNewPostText={props.updateNewPostText}
                                /> }/>
-                        <Route  path='/friends' render={ () => <SideBar state={props.state}/> } />
+                        <Route  path='/friends' render={ () => <SideBar state={props.state} online={props.online}/> } />
                         <Route  path='/news' render={ () => <News state={props.state}/> }/>
                         <Route  path='/audio' render={ () => <Music/> }/>
                         <Route  path='/settings' render={ () => <Settings/> }/>

@@ -245,7 +245,7 @@ code {
   width: 96%;
   border: 1px solid darkgray;
   border-radius: 20px;
-  height: 750px;
+  min-height: 750px;
   &__title {
     margin-bottom: 30px;
     text-align: center;
@@ -264,10 +264,17 @@ code {
     background-color: $second-color;
   }
   &__item {
-    padding: 10px 10px;
-    width: 90px;
+    padding: 7px 7px;
+    width: 100px;
+    height: 100px;
+    margin: 7px 7px;
     &__img {
-      width: 60px;
+      width: 70px;
+      &__online{
+        width: 50px;
+        border: 10px solid #16a085;
+        border-radius: 100%;
+      }
     }
     &__name {
       color: #47525E;
