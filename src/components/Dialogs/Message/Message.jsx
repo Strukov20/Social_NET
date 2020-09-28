@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 const Message = (props) => {
-    console.log(props)
+
     return (
 
         <div className={classNames("dialogs__mess__wrapper", {'dialogs__mess__wrapper__me': props.message.isMe})}>

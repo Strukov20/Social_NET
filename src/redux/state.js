@@ -20,6 +20,7 @@ let state = {
             { id: "6", message: 'Hi, what are you doing?' },
             { id: "7", message: 'Hi, how are you?', isMe: true }
         ],
+        newMessageText: '',
         dialogs: [
             { id: "1", name: 'Buriy Alex' },
             { id: "2", name: 'Strukov Bohdan' },
@@ -81,6 +82,21 @@ export let addPost = () => {
 
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export const addMessage = () => {
+    const newMessage = {
+        id: 8,
+        message: state.dialogsPage.newMessageText,
+        isMe: false
+    };
+    state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newMessageText = '';
+    rerenderEntireTree(state);
+}
+export let updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText;
     rerenderEntireTree(state);
 }
 

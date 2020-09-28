@@ -10,6 +10,7 @@ import {Music} from "./components/Music/music";
 import {Settings} from "./components/Settings/settings";
 import {SideBar} from "./components/SideBar/sideBar";
 
+
 const App = (props) => {
     console.log(props)
     return (
@@ -19,7 +20,12 @@ const App = (props) => {
 
                     <div className='content-wrapper'>
                         <Navbar />
-                        <Route path='/dialogs' render={ () => <Dialogs state={props.state.dialogsPage} /> }/>
+                        <Route path='/dialogs'
+                               render={ () => <Dialogs
+                                   state={props.state.dialogsPage}
+                                   addMessage={props.addMessage}
+                                   updateNewMessageText={props.updateNewMessageText}
+                               /> }/>
                         <Route path='/profile'
                                render={ () => <Profile
                                    profilePage={props.state.profilePage}

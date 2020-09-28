@@ -336,13 +336,13 @@ code {
     border: 1px solid darkgrey;
     border-radius: 10px;
     padding: 20px 10px;
+    min-height: 760px;
   }
 
   &__mess-item {
     border: 1px solid darkgrey;
     margin: 5px 20px;
     padding: 20px 20px;
-    background-color: aliceblue;
     border-radius: 10px;
     font-style: italic;
     background-color: $second-color;

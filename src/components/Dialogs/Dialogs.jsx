@@ -8,6 +8,16 @@ const Dialogs = (props) => {
 
     const messagesElements = props.state.messages.map( message => <Message message={message} /> )
 
+    const newMessageElement = React.createRef();
+    const addMessage = () => {
+        props.addMessage();
+    }
+
+    let onMessageChange = () => {
+        let text = newMessageElement.current.value;
+        props.updateNewMessageText(text);
+    }
+
     return (
         <div className="dialogs">
             <div className="dialogs__wrapper">
@@ -21,8 +31,10 @@ const Dialogs = (props) => {
             </div>
             <div className="dialogs__mess__sending">
                 <hr className="mess_hr"/>
-                <input className="dialogs__mess__sending__input" type="text" placeholder="Enter message..."/>
-                <button className="dialogs__mess__sending__button">Enter</button>
+                <input onChange={onMessageChange} ref={newMessageElement}
+                       value={props.newMessageText}
+                       className="dialogs__mess__sending__input" type="text" placeholder="Enter message..."/>
+                <button onClick={addMessage} className="dialogs__mess__sending__button">Enter</button>
             </div>
         </div>
     )
