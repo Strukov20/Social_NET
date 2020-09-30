@@ -4,9 +4,9 @@ import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
-    const dialogsElements = props.state.dialogs.map( dialog => <DialogItem  name={dialog.name} id={dialog.id}/> )
+    const dialogsElements = props.dialogsPage.dialogs.map( dialog => <DialogItem  name={dialog.name} id={dialog.id}/> )
 
-    const messagesElements = props.state.messages.map( message => <Message message={message} /> )
+    const messagesElements = props.dialogsPage.messages.map( message => <Message message={message} /> )
 
     const newMessageElement = React.createRef();
     const addMessage = () => {
@@ -28,14 +28,15 @@ const Dialogs = (props) => {
                 <div className="dialogs__mess-items">
                     {messagesElements}
                 </div>
+                <div className="dialogs__mess__sending">
+                    <hr className="mess_hr"/>
+                    <input onChange={onMessageChange} ref={newMessageElement}
+                           value={props.newMessageText}
+                           className="dialogs__mess__sending__input" type="text" placeholder="Enter message..."/>
+                    <button onClick={addMessage} className="dialogs__mess__sending__button">Enter</button>
+                </div>
             </div>
-            <div className="dialogs__mess__sending">
-                <hr className="mess_hr"/>
-                <input onChange={onMessageChange} ref={newMessageElement}
-                       value={props.newMessageText}
-                       className="dialogs__mess__sending__input" type="text" placeholder="Enter message..."/>
-                <button onClick={addMessage} className="dialogs__mess__sending__button">Enter</button>
-            </div>
+
         </div>
     )
 }

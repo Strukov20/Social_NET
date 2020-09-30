@@ -1,4 +1,6 @@
-import {rerenderEntireTree} from "../render";
+let rerenderEntireTree = () => {
+    console.log('State changed')
+}
 
 let state = {
     profilePage: {
@@ -57,7 +59,7 @@ let state = {
             img: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/1-cloudscape-canvas-pixabay.jpg" },
         {   id: "3",
             text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cum error fuga praesentium quisquam.Dolore illum incidunt minima modi perferendis.',
-            img: "https://lh5.ggpht.com/-Ctv1m-63Q7Q/TozUCb70gQI/AAAAAAAAAfw/UQk-nUN3NHM/s1600/beautiful+nature+scenery-1.jpg" },
+            img: "https://afishanovgorod.ru/wp-content/uploads/2019/09/maxresdefault.jpg" },
         {   id: "4",
             text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cum error fuga praesentium quisquam.Dolore illum incidunt minima modi perferendis.',
             img: "https://i2.wp.com/digital-photography-school.com/wp-content/uploads/2016/02/Barn-DPSexample.jpg?resize=717%2C478&ssl=1" },
@@ -69,7 +71,7 @@ let state = {
 
 window.state = state;
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 5,
         message: state.profilePage.newPostText,
@@ -79,8 +81,7 @@ export let addPost = () => {
     state.profilePage.newPostText = '';
     rerenderEntireTree(state);
 }
-
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 }
@@ -89,15 +90,19 @@ export const addMessage = () => {
     const newMessage = {
         id: 8,
         message: state.dialogsPage.newMessageText,
-        isMe: false
+        isMe: true
     };
     state.dialogsPage.messages.push(newMessage);
     state.dialogsPage.newMessageText = '';
     rerenderEntireTree(state);
 }
-export let updateNewMessageText = (newText) => {
-    state.dialogsPage.newMessageText = newText;
+export const updateNewMessageText = (newWord) => {
+    state.dialogsPage.newMessageText = newWord;
     rerenderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 }
 
 export default state;

@@ -22,9 +22,10 @@ const App = (props) => {
                         <Navbar />
                         <Route path='/dialogs'
                                render={ () => <Dialogs
-                                   state={props.state.dialogsPage}
+                                   dialogsPage={props.state.dialogsPage}
                                    addMessage={props.addMessage}
                                    updateNewMessageText={props.updateNewMessageText}
+                                   newMessageText={props.state.dialogsPage.newMessageText}
                                /> }/>
                         <Route path='/profile'
                                render={ () => <Profile
