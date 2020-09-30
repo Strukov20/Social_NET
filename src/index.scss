@@ -209,7 +209,7 @@ code {
 .posts {
   padding: 2px 40px;
   margin: 0 auto;
-  width: 90%;
+  max-width: 860px;
 
   &__item {
     display: flex;
@@ -218,6 +218,7 @@ code {
     border-radius: 40px;
     margin-top: 20px;
     background-color: $second-color;
+    overflow-x:hidden;
   }
 
   &__img {
