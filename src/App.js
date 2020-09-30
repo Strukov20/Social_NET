@@ -12,7 +12,6 @@ import {SideBar} from "./components/SideBar/sideBar";
 
 
 const App = (props) => {
-    console.log(props)
     return (
             <BrowserRouter>
                 <div className='wrapper'>
@@ -22,9 +21,7 @@ const App = (props) => {
                         <Navbar />
                         <Route path='/dialogs'
                                render={ () => <Dialogs
-                                   dialogsPage={props.state.dialogsPage}
-                                   dispatch={props.dispatch}
-                                   newMessageText={props.state.dialogsPage.newMessageText}
+                                   store={props.store}
                                /> }/>
                         <Route path='/profile'
                                render={ () => <Profile
