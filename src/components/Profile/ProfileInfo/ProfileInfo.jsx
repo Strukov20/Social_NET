@@ -16,13 +16,13 @@ const ProfileInfo = () => {
                     <a className="user__item" href="user__data">&nbsp;20 June</a>
                 </div>
                 <div className="user__title">City:
-                    <a className="user__item" target="_blank" href="https://uk.wikipedia.org/wiki/%D0%A3%D0%B6%D0%B3%D0%BE%D1%80%D0%BE%D0%B4">&nbsp;Uzhorod</a>
+                    <a className="user__item" href="https://uk.wikipedia.org/wiki/%D0%A3%D0%B6%D0%B3%D0%BE%D1%80%D0%BE%D0%B4">&nbsp;Uzhorod</a>
                 </div>
                 <div className="user__title">Education:
-                    <a className="user__item" target="_blank" href="https://www.uzhnu.edu.ua/">&nbsp;UzhNU</a>
+                    <a className="user__item" href="https://www.uzhnu.edu.ua/">&nbsp;UzhNU</a>
                 </div>
                 <div className="user__title">Web-Site:
-                    <a className="user__item" target="_blank" href="https://github.com/Strukov20">&nbsp;GitHub</a>
+                    <a className="user__item" href="https://github.com/Strukov20">&nbsp;GitHub</a>
                 </div>
             </div>
         </div>

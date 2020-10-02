@@ -1,27 +1,24 @@
 import React from 'react';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {addMessageActionCreator, UpdateNewMessageTextActionCreator} from "../../redux/dialogs-reducer";
 
 
 const Dialogs = (props) => {
 
-    const state = props.store.getState().dialogsPage;
+    const state = props.dialogsPage;
 
-    const dialogsElements = state.dialogs.map( dialog => <DialogItem  name={dialog.name} id={dialog.id}/> )
-
-    const messagesElements = state.messages.map( message => <Message message={message} /> )
-
+    const dialogsElements = state.dialogs.map( dialog => <DialogItem  name={dialog.name} key={dialog.id} id={dialog.id}/> )
+    const messagesElements = state.messages.map( message => <Message key={message.id} message={message} /> )
     const newMessageText = state.newMessageText;
 
 
-    const addMessage = () => {
-        props.store.dispatch(addMessageActionCreator());
+    const OnSendMessageClick = () => {
+        props.sendMessage()
     }
 
     let onMessageChange = (e) => {
         let newWord = e.target.value;
-        props.store.dispatch(UpdateNewMessageTextActionCreator(newWord));
+        props.UpdateNewMessageText(newWord);
     }
 
     return (
@@ -39,7 +36,7 @@ const Dialogs = (props) => {
                     <input onChange={onMessageChange}
                            value={newMessageText}
                            className="dialogs__mess__sending__input" type="text" placeholder="Enter message..."/>
-                    <button onClick={addMessage} className="dialogs__mess__sending__button">Send</button>
+                    <button onClick={OnSendMessageClick} className="dialogs__mess__sending__button">Send</button>
                 </div>
             </div>
 
