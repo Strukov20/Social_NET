@@ -1,77 +1,62 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './Users.scss';
+import * as axios from 'axios';
+import userPhoto from '../../assets/img/user_img.svg'
 
-const Users = (props) => {
+class Users extends Component {
 
-    if (props.users.length === 0) {
-        props.setUsers(
-            [
-                { id: "1",
-                    fullName: 'Bohdan Reddy',
-                    followed: false,
-                    photoUrl: 'https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg',
-                    status: 'Hi, how are you?',
-                    location: {country: 'Ukraine', city: 'Kiev'}
-                },
-                { id: "2",
-                    fullName: 'Bohdan Reddy',
-                    followed: true,
-                    photoUrl: 'https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg',
-                    status: 'It`s our new program! Hey!',
-                    location: {country: 'Polish', city: 'Gdansk'}
-                },
-                { id: "3",
-                    fullName: 'Bohdan Reddy',
-                    followed: false,
-                    photoUrl: 'https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg',
-                    status: 'Hi, good job!',
-                    location: {country: 'Slovakia', city: 'Bratislava'}
-                },
-                { id: "4",
-                    fullName: 'Bohdan Reddy',
-                    followed: true,
-                    photoUrl: 'https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg',
-                    status: 'Hey, why nobody love me?',
-                    location: {country: 'Belarus', city: 'Minsk'}
-                }
-            ]
-        )
+    componentDidMount() {
+        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+            .then(response => {
+                this.props.setUsers(response.data.items)
+            });
     }
 
+    render() {
+        return (
+            <div className="users">
+                {
+                    this.props.users.map(u => <div className="users__wrapper" key={u.id}>
+                            <div className="users__item">
+                                <div className="users__avatar">
+                                    <div className="users__avatar__wrapper">
+                                        <img className="users__avatar__img"
+                                             src={u.photos.small !== null ? u.photos.small : userPhoto}/>
+                                    </div>
+                                    <div>
+                                        {u.followed
+                                            ? <button className="users__button" onClick={() => {
+                                                this.props.unfollow(u.id)
+                                            }}> Unfollow </button>
+                                            : <button className="users__button_follow" onClick={() => {
+                                                this.props.follow(u.id)
+                                            }}> Follow </button>
+                                        }
 
-    return (
-        <div>
-            {
-                props.users.map(u => <div className="users__wrapper" key={u.id}>
-                    <div className="users__item">
-                        <div>
-                            <div className="users__avatar__wrapper">
-                                <img className="users__avatar" src={u.photoUrl} />
-                            </div>
-                            <div>
-                                {u.followed
-                                    ? <button onClick={() => {props.unfollow(u.id)}} > Unfollow </button>
-                                    : <button onClick={() => {props.follow(u.id)}} > Follow </button>
-                                }
-
-                            </div>
-                        </div>
-                        <div className="users__info">
-                            <div>
-                                <div>{u.fullName}</div>
-                                <div>{u.status}</div>
+                                    </div>
+                                </div>
+                                <div className="users__info">
+                                    <div>
+                                        <div className="users__info__fullName">{u.name}</div>
+                                        <div className="users__info__status">How are you?</div>
+                                    </div>
+                                </div>
+                                <div className="users__locate">
+                                    <div>
+                                        <div className="users__locate_country">Ukraine</div>
+                                        <div className="users__locate_city">Kiev</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="users__locate">
-                            <div>
-                                <div>{u.location.country}</div>
-                                <div>{u.location.city}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>)
-            }
-        </div>
-    )
+                    )
+                }
+                <div className="users__butWrap">
+                    <button className="users__butWrap__showMoreBut">Show More</button>
+                </div>
+            </div>
+        )
+    }
 }
- export default Users;
+
+export default Users;
