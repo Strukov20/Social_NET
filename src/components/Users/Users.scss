@@ -1,0 +1,18 @@
+
+.users {
+  &__wrapper {
+    margin: 35px 20px;
+  }
+  &__item {
+    display: flex;
+    width: 700px;
+    margin: 10px 40px;
+    justify-content: space-between;
+    border: 1px solid darkgrey;
+    border-radius: 10px;
+    padding: 15px 20px;
+  }
+  &__avatar {
+    width: 80px;
+  }
+}

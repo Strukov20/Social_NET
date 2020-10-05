@@ -1,5 +1,6 @@
 import React from "react";
 import {FriendItem} from "./friendItem";
+import './Sidebar.scss'
 
 const initialState = {
     sideBar: [

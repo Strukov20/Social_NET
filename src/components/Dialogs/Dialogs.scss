@@ -1,0 +1,114 @@
+$main-color: #16a085;
+$second-color: #e1f3ec;
+$gold-color: #ecc63e;
+
+
+.dialogs {
+  margin: 20px 20px;
+  width: 96%;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__items {
+    width: 30%;
+    border: 1px solid darkgrey;
+    border-radius: 20px;
+
+  }
+
+  &__item {
+    display: flex;
+    border: 1px solid darkgrey;
+    margin: 7px 0;
+    padding: 10px 10px;
+    background-color: $second-color;
+    border-radius: 10px;
+    a {
+      margin: auto 20px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #47525E;
+      font-weight: bold;
+    }
+    &__img {
+      width: 50px;
+
+    }
+  }
+  .vertical-line {
+    margin: 0 20px;
+    border-left: 3px solid ;
+    height: 740px;
+    color: #009191;
+  }
+
+  &__mess-items {
+    width: 70%;
+    border: 1px solid darkgrey;
+    border-radius: 10px;
+    padding: 20px 10px;
+    min-height: 720px;
+
+  }
+
+  &__mess-item {
+    box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.196733);
+    border-radius: 12px 12px 12px 0px;
+    border: 1px solid darkgrey;
+    margin: 5px 20px;
+    padding: 20px 20px;
+    font-style: italic;
+    background-color: $second-color;
+    &__me {
+      background: #FFFFFF;
+      border: 1px solid #ECECEC;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.0220444);
+      border-radius: 12px 12px 0px 12px;
+    }
+  }
+  &__mess__wrapper{
+    display: flex;
+    flex-direction: row;
+    &__me {
+      flex-direction: row-reverse;
+    }
+  }
+  &__mess__img {
+    width: 50px;
+    margin: 0 10px;
+  }
+  &__mess__sending{
+    .mess_hr {
+      width: 550px;
+      margin-bottom: 20px;
+      background: $main-color;
+    }
+    position: absolute;
+    margin: 0 20px;
+    left: 46%;
+    bottom: 7%;
+    &__input {
+      padding: 15px 20px;
+      width: 425px;
+      border: 1px solid darkgray;
+      border-radius: 15px;
+      font-size: 16px;
+      outline:none;
+    }
+    &__button {
+      margin-left: 20px;
+      width: 120px;
+      height: 50px;
+      border: 1px solid darkgray;
+      border-radius: 40px;
+      background: $main-color;
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      outline:none;
+    }
+  }
+}

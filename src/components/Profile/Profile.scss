@@ -1,0 +1,139 @@
+$main-color: #16a085;
+$second-color: #e1f3ec;
+$gold-color: #ecc63e;
+
+.content-wrapper {
+  display: flex;
+  width: 100%;
+
+}
+
+.content {
+  padding: 10px 10px;
+  margin: 20px 10px;
+  width: 96%;
+}
+
+.profile {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+  &__avatar {
+    width: 300px;
+  }
+}
+
+.user {
+  &__data {
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+
+  &__title {
+    color: #47525E;
+    font-family: Lato;
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  &__item {
+    color: #47525E;
+    font-family: Lato;
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+  &__name {
+    line-height: 90px;
+    font-size: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    color: $main-color;
+    font-family: Lato;
+
+  }
+}
+
+.form {
+  width: 100%;
+  padding: 50px 30px;
+
+  .hr {
+    margin: 40px 0;
+  }
+
+  &__title {
+    color: #47525E;
+    font-family: Lato;
+    font-size: 45px;
+    text-align: left;
+    padding: 0 80px;
+    font-weight: bold;
+    font-style: italic;
+
+  }
+
+  &__input {
+    display: flex;
+    background-color: aliceblue;
+    width: 70%;
+    height: 46px;
+    border-radius: 30px;
+    padding: 0 30px;
+    margin: 0 auto;
+    font-size: 22px;
+    outline:none;
+  }
+
+  &__input:focus {
+    background-color: antiquewhite;
+  }
+
+  &__wrapper {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  &__button {
+    background-color: $main-color;
+    width: 15%;
+    height: 50px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: azure;
+    font-size: 20px;
+    margin: 0 auto;
+    outline:none;
+  }
+}
+
+.posts {
+  padding: 2px 40px;
+  margin: 0 auto;
+  max-width: 860px;
+
+  &__item {
+    display: flex;
+    padding: 20px 20px;
+    border: 1px solid darkcyan;
+    border-radius: 40px;
+    margin-top: 20px;
+    background-color: $second-color;
+    overflow-x:hidden;
+  }
+
+  &__img {
+    width: 90px;
+  }
+
+  &__title {
+    margin: auto 50px;
+    font-size: 26px;
+  }
+
+  &__like {
+    font-size: 25px;
+    margin: auto 0 auto auto;
+    text-align: right;
+  }
+}

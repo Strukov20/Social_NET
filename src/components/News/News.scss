@@ -1,0 +1,46 @@
+$main-color: #16a085;
+$second-color: #e1f3ec;
+$gold-color: #ecc63e;
+
+.news {
+  &__wrapper{
+    padding: 10px 10px;
+    margin: 20px 10px;
+    width: 96%;
+    border: 1px solid darkgray;
+    border-radius: 20px;
+    min-height: 750px;
+    background-color: $second-color;
+  }
+  &__navbar__items {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+  &__navbar__item {
+    width: 150px;
+    height: 30px;
+    margin: 5px;
+    font-size: 18px;
+    background-color: gainsboro;
+    outline: none;
+    border: 1px solid darkgray;
+    border-radius: 7px;
+  }
+  &__items {
+    width: 700px;
+    margin: 0 auto;
+  }
+  &__item {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px 25px;
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    background-color: white;
+    img {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+}

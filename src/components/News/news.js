@@ -1,5 +1,6 @@
 import React from "react";
 import {NewsItem} from "./newsItem";
+import './News.scss'
 
 const initialState = {
     news: [

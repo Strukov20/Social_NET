@@ -9,6 +9,7 @@ import {Settings} from "./components/Settings/settings";
 import {SideBar} from "./components/SideBar/sideBar";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import News from "./components/News/news";
+import UsersContainer from "./components/Users/UsersContainer";
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
                         <Route  path='/news' render={ () => <News /> }/>
                         <Route  path='/audio' render={ () => <Music /> }/>
                         <Route  path='/settings' render={ () => <Settings /> }/>
+                        <Route  path='/users' render={ () => <UsersContainer /> }/>
                     </div>
                 </div>
             </BrowserRouter>
