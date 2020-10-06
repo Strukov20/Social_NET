@@ -48,7 +48,7 @@ $gold-color: #ecc63e;
     height: 35px;
     color: black;
     font-weight: bold;
-    background-color: $gold-color;
+    background-color: #fffe0069;
     border: 1px solid darkgrey;
     border-radius: 10px;
     outline: none;
@@ -62,8 +62,8 @@ $gold-color: #ecc63e;
       border-radius: 10px;
       outline: none;
       font-size: 13px;
-      color: $main-color;
-      background-color: white;
+      color: black;
+      background-color: #00ff906b;
     }
   }
   &__info {
