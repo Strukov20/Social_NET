@@ -1,28 +1,35 @@
 import React from 'react';
+import {Preloader} from "../../common/preloader/Preloader";
+import userPhoto from "../../../assets/img/avatar.png";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+
+    if(!props.profile) {
+        return <Preloader/>
+    }
+
     return (
         <div className="profile">
             <div className="profile__img">
-                <img src="https://www.pngkey.com/png/full/353-3534482_avatar-portfolio-02-avatar-sketch-cartoon-avatar.png" className="profile__avatar" alt="profile-img"/>
+                <img src={props.profile.photos.large !== null ? props.profile.photos.large : userPhoto} className="profile__avatar" alt="profile-img"/>
             </div>
 
 
             <div className="user__data">
                 <div>
-                    <a className="user__name" href="profile">&nbsp;Bohdan Strukov</a>
+                    <a className="user__name" href="profile">&nbsp;{props.profile.fullName}</a>
                 </div>
-                <div className="user__title">Date of Birth:
-                    <a className="user__item" href="user__data">&nbsp;20 June</a>
+                <div className="user__title">About ME:
+                    <a className="user__item" href="user__data">&nbsp;{props.profile.aboutMe !== null ? props.profile.aboutMe : 'No information available'}</a>
                 </div>
-                <div className="user__title">City:
-                    <a className="user__item" href="https://uk.wikipedia.org/wiki/%D0%A3%D0%B6%D0%B3%D0%BE%D1%80%D0%BE%D0%B4">&nbsp;Uzhorod</a>
+                <div className="user__title">Work:
+                    <a className="user__item" href="https://uk.wikipedia.org/wiki/%D0%A3%D0%B6%D0%B3%D0%BE%D1%80%D0%BE%D0%B4">&nbsp;{props.profile.lookingForAJobDescription !== null ? props.profile.lookingForAJobDescription : 'No information available'}</a>
                 </div>
-                <div className="user__title">Education:
-                    <a className="user__item" href="https://www.uzhnu.edu.ua/">&nbsp;UzhNU</a>
+                <div className="user__title">Instagram:
+                    <a className="user__item" href="https://www.uzhnu.edu.ua/">&nbsp;{props.profile.contacts.instagram !== null ? props.profile.contacts.instagram : 'No information available'}</a>
                 </div>
                 <div className="user__title">Web-Site:
-                    <a className="user__item" href="https://github.com/Strukov20">&nbsp;GitHub</a>
+                    <a className="user__item" href="https://github.com/Strukov20">&nbsp;{props.profile.contacts.github !== null ? props.profile.contacts.github : 'No information available'}</a>
                 </div>
             </div>
         </div>
