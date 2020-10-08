@@ -18,13 +18,31 @@ $gold-color: #ecc63e;
     width: 55px;
     margin-left: 60px;
   }
-
-  &__title {
-    position: absolute;
-    left: 45%;
-    font-size: 50px;
-    font-family: Lato;
-    font-weight: bold;
+  &__login__block {
+    display: flex;
+    margin-left: auto;
+    padding: 0 50px;
+    &_button {
+      border: 1px  solid darkgrey;
+      border-radius: 20px;
+      background-color: #ecc63e;
+      width: 140px;
+      height: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 26px;
+    }
+    &_wrapper {
+      display: flex;
+    }
+    &_login {
+      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: bold;
+      margin: auto 0;
+    }
   }
 
 }
