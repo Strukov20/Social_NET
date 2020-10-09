@@ -42,6 +42,11 @@ $gold-color: #ecc63e;
       font-size: 24px;
       font-weight: bold;
       margin: auto 0;
+      cursor: pointer;
+    }
+    &_img {
+      width: 50px;
+      margin: 0 20px;
     }
   }
 

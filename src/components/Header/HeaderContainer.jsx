@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import Header from "./Header";
 import * as axios from "axios";
 import {connect} from "react-redux";
-import {toggleIsFetching} from "../../redux/auth-reducer";
-import {setAuthUserData} from "../../redux/auth-reducer";
+import {toggleIsFetching, setAuthUserData} from "../../redux/auth-reducer";
+import {Preloader} from "../common/preloader/Preloader";
 
 class HeaderContainer extends Component {
     componentDidMount() {
@@ -19,8 +19,15 @@ class HeaderContainer extends Component {
                 }
             });
     }
+
+
     render() {
-        return <Header {...this.props}/>
+        return <>
+            {this.props.isFetching ? <Preloader/> : null}
+            <Header
+                {...this.props}
+                profile={this.props.profile}/>
+        </>
     }
 }
 
