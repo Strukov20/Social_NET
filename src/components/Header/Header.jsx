@@ -4,7 +4,6 @@ import {NavLink} from "react-router-dom";
 import userPhoto from "../../assets/img/user_img.svg";
 
 const Header = (props) => {
-    debugger;
     return (
         <header className="app__header">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/863px-Apple_logo_black.svg.png" className="app__logo" alt="logo" />
