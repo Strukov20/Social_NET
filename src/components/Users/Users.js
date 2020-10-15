@@ -2,7 +2,6 @@ import React from 'react';
 import userPhoto from "../../assets/img/user_img.svg";
 import './Users.scss';
 import {NavLink} from "react-router-dom";
-import * as axios from "axios";
 
 export const Users = (props) => {
 
@@ -26,38 +25,12 @@ export const Users = (props) => {
                                 </div>
                                 <div>
                                     {u.followed
-                                        ? <button disabled={props.followingInProgress.some(id => id === u.id)} className="users__button" onClick={() => {
-                                            props.toggleFollowingProgress(true, u.id);
-                                            axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                                                withCredentials: true,
-                                                headers: {
-                                                    "API-KEY": "7c7cac98-43b2-4bf1-923c-b48eea44b1f7"
-                                                }
-                                            })
-                                                .then(response => {
-                                                    if (response.data.resultCode === 0) {
-                                                        props.unfollow(u.id)
-                                                    }
-                                                    props.toggleFollowingProgress(false, u.id);
-                                                });
-                                        }}> Unfollow </button>
+                                        ? <button disabled={props.followingInProgress.some(id => id === u.id)} className="users__button"
+                                                  onClick={() => {props.unfollow(u.id)}}> Unfollow </button>
 
-                                        : <button disabled={props.followingInProgress.some(id => id === u.id)} className="users__button_follow" onClick={() => {
-                                            props.toggleFollowingProgress(true, u.id);
-                                            axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                                                withCredentials: true,
-                                                headers: {
-                                                    "API-KEY": "7c7cac98-43b2-4bf1-923c-b48eea44b1f7"
-                                                }
-                                            })
-                                                .then(response => {
-                                                    if (response.data.resultCode === 0) {
-                                                        props.follow(u.id)
-                                                    }
-                                                    props.toggleFollowingProgress(false, u.id);
-                                                });
-                                        }}> Follow </button>}
-
+                                        : <button disabled={props.followingInProgress.some(id => id === u.id)} className="users__button_follow"
+                                                  onClick={() => {props.follow(u.id)}}> Follow </button>
+                                    }
                                 </div>
                             </div>
                             <div className="users__info">
@@ -78,9 +51,10 @@ export const Users = (props) => {
             }
             <div className="users__pagination">
                 {pages.map(p => {
-                    return <span className={props.pageNumber === p && "users__pagination_selected"}
-                                 onClick={(e) => {props.onPageChanged(p)}}
-                    >{p}</span>
+                    return <span className={props.currentPage === p && "users__pagination_selected"}
+                                 onClick={(e) => {
+                                     props.onPageChanged(p);
+                                 }}>{p}</span>
                 })}
             </div>
             {/*<div className="users__butWrap">*/}
