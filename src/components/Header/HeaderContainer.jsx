@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import Header from "./Header";
 import {connect} from "react-redux";
-import {toggleIsFetching, setAuthUserData,getAuth} from "../../redux/auth-reducer";
+import {toggleIsFetching, setAuthUserData, getAuthUserData} from "../../redux/auth-reducer";
 import {Preloader} from "../common/preloader/Preloader";
 
 class HeaderContainer extends Component {
     componentDidMount() {
-        this.props.getAuth();
+        this.props.getAuthUserData();
     }
 
 
@@ -27,4 +27,4 @@ const mapStateToProps = (state) => {
         login: state.auth.login
     }
 }
-export default connect(mapStateToProps, {setAuthUserData, toggleIsFetching, getAuth})(HeaderContainer);
+export default connect(mapStateToProps, {setAuthUserData, toggleIsFetching, getAuthUserData})(HeaderContainer);

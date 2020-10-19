@@ -34,7 +34,7 @@ export const followingAPI = {
 }
 
 export const authAPI = {
-    getAuth() {
+    me() {
         return instance.get(`https://social-network.samuraijs.com/api/1.0/auth/me`)
             .then(response => {
                 return response.data

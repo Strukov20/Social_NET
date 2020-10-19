@@ -1,6 +1,7 @@
 import React from 'react';
 import {Preloader} from "../../common/preloader/Preloader";
 import userPhoto from "../../../assets/img/avatar.png";
+import ProfileStatus from "./ProfileStatus";
 
 const ProfileInfo = (props) => {
 
@@ -30,6 +31,9 @@ const ProfileInfo = (props) => {
                 </div>
                 <div className="user__title">Web-Site:
                     <a className="user__item" href="https://github.com/Strukov20">&nbsp;{props.profile.contacts.github !== null ? props.profile.contacts.github : 'No information available'}</a>
+                </div>
+                <div className="user__title">Status:
+                    <ProfileStatus status={'Hello my Friends!'}/>
                 </div>
             </div>
         </div>
