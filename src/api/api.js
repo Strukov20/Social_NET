@@ -20,22 +20,28 @@ export const usersAPI = {
 export const profileAPI = {
     getProfile(userId) {
         return instance.get(`profile/${userId}`)
+    },
+    getStatus(userId) {
+        return instance.get(`profile/status/${userId}`)
+    },
+    updateStatus(status) {
+        return instance.put(`profile/status`, { status: status })
     }
 }
 
 export const followingAPI = {
     follow(userId) {
-        return instance.post(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`)
+        return instance.post(`follow/${userId}`)
     },
     unfollow(userId) {
-        return instance.delete(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`)
+        return instance.delete(`follow/${userId}`)
     }
 
 }
 
 export const authAPI = {
     me() {
-        return instance.get(`https://social-network.samuraijs.com/api/1.0/auth/me`)
+        return instance.get(`auth/me`)
             .then(response => {
                 return response.data
             })
