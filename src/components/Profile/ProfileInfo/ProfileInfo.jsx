@@ -18,7 +18,7 @@ const ProfileInfo = (props) => {
 
             <div className="user__data">
                 <div>
-                    <a className="user__name" href="profile">&nbsp;{props.profile.fullName}</a>
+                    <a className="user__name" href="profile">&nbsp;{props.profile.fullName.toUpperCase()}</a>
                 </div>
                 <div className="user__title">About ME:
                     <a className="user__item" href="user__data">&nbsp;{props.profile.aboutMe !== null ? props.profile.aboutMe : 'No information available'}</a>
