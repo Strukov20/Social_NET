@@ -39,9 +39,10 @@ const Dialogs = (props) => {
                     <button onClick={OnSendMessageClick} className="dialogs__mess__sending__button">Send</button>
                 </div>
             </div>
-
         </div>
     )
 }
+
+
 
 export default Dialogs;
