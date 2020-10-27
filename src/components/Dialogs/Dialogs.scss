@@ -85,13 +85,15 @@ $gold-color: #ecc63e;
       margin-bottom: 20px;
       background: $main-color;
     }
+
+    display: flex;
     position: absolute;
     margin: 0 20px;
     left: 46%;
     bottom: 7%;
     &__input {
       padding: 15px 20px;
-      width: 425px;
+      width: 400px;
       border: 1px solid darkgray;
       border-radius: 15px;
       font-size: 16px;
