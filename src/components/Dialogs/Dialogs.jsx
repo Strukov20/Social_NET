@@ -1,6 +1,7 @@
 import React from 'react';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import {Field, reduxForm} from "redux-form";
 
 
 const Dialogs = (props) => {
@@ -11,14 +12,8 @@ const Dialogs = (props) => {
     const messagesElements = state.messages.map( message => <Message key={message.id} message={message} /> )
     const newMessageText = state.newMessageText;
 
-
-    const OnSendMessageClick = () => {
-        props.sendMessage()
-    }
-
-    let onMessageChange = (e) => {
-        let newWord = e.target.value;
-        props.UpdateNewMessageText(newWord);
+    const addNewMessage = (values) => {
+        props.sendMessage(values.newMessageText)
     }
 
     return (
@@ -31,18 +26,25 @@ const Dialogs = (props) => {
                 <div className="dialogs__mess-items">
                     {messagesElements}
                 </div>
-                <div className="dialogs__mess__sending">
-                    <hr className="mess_hr"/>
-                    <input onChange={onMessageChange}
-                           value={newMessageText}
-                           className="dialogs__mess__sending__input" type="text" placeholder="Enter message..."/>
-                    <button onClick={OnSendMessageClick} className="dialogs__mess__sending__button">Send</button>
-                </div>
+                <AddMessageFormRedux onSubmit={addNewMessage}/>
             </div>
         </div>
     )
 }
 
+const AddMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit} className="dialogs__mess__sending">
+            {/*<hr className="mess_hr"/>*/}
+            <div>
+                <Field component={"input"} placeholder='Enter your message' name="newMessageText"
+                       className="dialogs__mess__sending__input"/>
+            </div>
+            <div><button className="dialogs__mess__sending__button">Send</button></div>
+        </form>
+    )
+}
 
+const AddMessageFormRedux = reduxForm({form: "dialogAddMessageForm"})(AddMessageForm);
 
 export default Dialogs;
