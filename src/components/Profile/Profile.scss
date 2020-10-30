@@ -1,10 +1,8 @@
-$main-color: #16a085;
-$second-color: #e1f3ec;
-$gold-color: #ecc63e;
 
 .content-wrapper {
   display: flex;
-  width: 100%;
+  width: 1280px;
+  margin: 0 auto;
 
 }
 
@@ -48,7 +46,7 @@ $gold-color: #ecc63e;
     font-size: 50px;
     text-decoration: none;
     font-weight: bold;
-    color: $main-color;
+    color: var(--main-color);
     font-family: Lato;
 
   }
@@ -95,7 +93,7 @@ $gold-color: #ecc63e;
   }
 
   &__button {
-    background-color: $main-color;
+    background-color: var(--main-color);
     width: 15%;
     height: 50px;
     border-radius: 30px;
@@ -118,7 +116,7 @@ $gold-color: #ecc63e;
     border: 1px solid darkcyan;
     border-radius: 40px;
     margin-top: 20px;
-    background-color: $second-color;
+    background-color: var(--second-color);
     overflow-x:hidden;
   }
 

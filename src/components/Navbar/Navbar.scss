@@ -1,13 +1,9 @@
-$main-color: #16a085;
-$second-color: #e1f3ec;
-$gold-color: #ecc63e;
-
 .nav {
   margin-top: 20px;
   width: 200px;
   padding: 10px 10px 10px 10px;
   height: 750px;
-  background-color: $main-color;
+  background-color: var(--main-color);;
   border-radius: 10px;
   &__hr {
     width: 60%;
@@ -21,33 +17,31 @@ $gold-color: #ecc63e;
 
   &__item a {
     color: #FFFFFF;
-    font-family: Lato;
     font-size: 30px;
     line-height: 44px;
     text-decoration: none;
 
     &:hover {
-      color: $gold-color;
+      color: var(--gold-color);
     }
 
     &.activeLink {
-      color: $gold-color;
+      color: var(--gold-color);
     }
   }
 
   &__item_last a {
     color: #FFFFFF;
-    font-family: Lato;
     font-size: 30px;
     line-height: 100px;
     text-decoration: none;
 
     &:hover {
-      color: gold;
+      color: var(--gold-color);
     }
 
     &.activeLink {
-      color: gold;
+      color: var(--gold-color);
     }
   }
 }
