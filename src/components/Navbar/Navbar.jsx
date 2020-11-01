@@ -11,7 +11,7 @@ const Navbar = () => {
                 <div className="nav__item"><NavLink activeClassName="activeLink" to="/dialogs">Dialogs</NavLink></div>
                 <div className="nav__item"><NavLink activeClassName="activeLink" to="/news">News</NavLink></div>
                 <div className="nav__item"><NavLink activeClassName="activeLink" to="/audio">Music</NavLink></div>
-                <div className="nav__item"><NavLink activeClassName="activeLink" to="/friends">Friends</NavLink></div>
+                <div className="nav__item"><NavLink activeClassName="activeLink" to="/friends">Sidebar</NavLink></div>
                 <hr className="nav__hr"/>
                 <div className="nav__item_last"><NavLink activeClassName="activeLink" to="/settings">Settings</NavLink></div>
             </div>

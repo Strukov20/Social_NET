@@ -33,7 +33,7 @@ const ProfileInfo = (props) => {
                     <a className="user__item" href="https://github.com/Strukov20">&nbsp;{props.profile.contacts.github !== null ? props.profile.contacts.github : 'No information available'}</a>
                 </div>
                 <div className="user__title">Status:
-                    <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+                    <ProfileStatus className="profile_status_wrapper" status={props.status} updateStatus={props.updateStatus}/>
                 </div>
             </div>
         </div>
