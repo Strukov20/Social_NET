@@ -84,11 +84,11 @@
   &__input {
     display: flex;
     background-color: aliceblue;
-    width: 70%;
+    width: 600px;
     height: 46px;
     border-radius: 30px;
     padding: 0 30px;
-    margin: 0 auto;
+    margin: 0 0 30px 80px;
     font-size: 22px;
     outline:none;
   }
@@ -104,13 +104,13 @@
 
   &__button {
     background-color: var(--main-color);
-    width: 15%;
+    width: 150px;
     height: 50px;
     border-radius: 30px;
     text-decoration: none;
     color: azure;
     font-size: 20px;
-    margin: 0 auto;
+    margin: 0 30px;
     outline:none;
   }
 }

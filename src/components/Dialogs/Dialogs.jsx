@@ -1,7 +1,8 @@
 import React from 'react';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {Field, reduxForm} from "redux-form";
+import {reduxForm} from "redux-form";
+import AddMessageForm from "../../forms/AddMessageForm";
 
 
 const Dialogs = (props) => {
@@ -32,18 +33,7 @@ const Dialogs = (props) => {
     )
 }
 
-const AddMessageForm = (props) => {
-    return (
-        <form onSubmit={props.handleSubmit} className="dialogs__mess__sending">
-            {/*<hr className="mess_hr"/>*/}
-            <div>
-                <Field component={"input"} placeholder='Enter your message' name="newMessageText"
-                       className="dialogs__mess__sending__input"/>
-            </div>
-            <div><button className="dialogs__mess__sending__button">Send</button></div>
-        </form>
-    )
-}
+
 
 const AddMessageFormRedux = reduxForm({form: "dialogAddMessageForm"})(AddMessageForm);
 

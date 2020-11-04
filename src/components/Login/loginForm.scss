@@ -1,0 +1,70 @@
+.login{
+  &_form{
+    border: 2px solid var(--green-color);
+    border-radius: 25px;
+    padding: 80px 110px 110px 110px;
+    background: var(--main-color);
+    color: white;
+    margin: auto auto;
+    &_loginField {
+      border: 1px solid black;
+      border-radius: 15px;
+      width: 275px;
+      height: 30px;
+      padding-left: 15px ;
+      outline: none;
+      background: var(--second-color);
+      &:focus {
+        background: white;
+      }
+    }
+    &_passwordField {
+      margin: 10px 0;
+      border: 1px solid black;
+      border-radius: 15px;
+      width: 275px;
+      height: 30px;
+      padding-left: 15px ;
+      outline: none;
+      background: var(--second-color);
+      &:focus {
+        background: white;
+      }
+    }
+    &_checkbox {
+      margin: 10px 10px 10px 20px;
+    }
+    &_buttons {
+      display: flex;
+      margin-top: 10px;
+    }
+    &_loginButton{
+      background: var(--purple-color);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      width: 100px;
+      height: 40px;
+      border-radius: 7px;
+      margin-right: 10px;
+      cursor: pointer;
+      outline: none;
+    }
+    &_forgotButton {
+      background: var(--green-color);
+      color: white;
+      font-size: 18px;
+      width: 180px;
+      height: 40px;
+      border-radius: 7px;
+      margin-right: 10px;
+      cursor: pointer;
+      outline: none;
+    }
+    &_title {
+      text-align: center;
+      color: var(--purple-color);
+      font-size: 40px;
+    }
+  }
+}

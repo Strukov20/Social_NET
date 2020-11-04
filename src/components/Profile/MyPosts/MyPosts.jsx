@@ -1,29 +1,23 @@
 import React from 'react';
 import Post from './Post/Post';
+import {reduxForm} from "redux-form";
+import AddPostForm from "../../../forms/AddPostForm";
 
 const MyPosts = (props) => {
-    let postsElements = props.posts.map( post => <Post key={post.id} message={post.message} likesCount={post.likesCount}/>);
+    const state = props.profilePage
 
-    let newPostElement = React.createRef();
+    let postsElements = state.posts.map( post => <Post key={post.id} message={post.message} likesCount={post.likesCount}/>);
+    const newPostText = state.newPostText;
 
-    let onAddPost = () => {
-        props.addPost();
-    }
-
-    let onPostChange = () => {
-        let newText = newPostElement.current.value;
-        props.updateNewPostText(newText)
+    const addNewPost = (values) => {
+        props.addPost(values.newPostText)
     }
 
     return (
         <div className="form">
             <hr className="hr"/>
             <div className="form__title">My Posts</div>
-            <div className="form__wrapper">
-                <input onChange={onPostChange} ref={newPostElement}
-                       value={props.newPostText}  type="text" className="form__input" placeholder="Enter your news..."/>
-                <button className="form__button" onClick={ onAddPost }>Add post</button>
-            </div>
+            <AddPostFormRedux onSubmit={addNewPost}/>
             <div>
                 { postsElements }
             </div>
@@ -31,5 +25,7 @@ const MyPosts = (props) => {
 
     )
 }
+
+const AddPostFormRedux = reduxForm({form: "profileAddPostForm"})(AddPostForm)
 
 export default MyPosts;
