@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from './Post/Post';
 import {reduxForm} from "redux-form";
-import AddPostForm from "../../../forms/AddPostForm";
+import AddNewPostForm from "../../../forms/AddNewPostForm";
 
 const MyPosts = (props) => {
     const state = props.profilePage
@@ -26,6 +26,6 @@ const MyPosts = (props) => {
     )
 }
 
-const AddPostFormRedux = reduxForm({form: "profileAddPostForm"})(AddPostForm)
+const AddPostFormRedux = reduxForm({form: "ProfileAddNewPostForm"})(AddNewPostForm)
 
 export default MyPosts;

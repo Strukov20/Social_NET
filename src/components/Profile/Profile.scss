@@ -91,11 +91,15 @@
     margin: 0 0 30px 80px;
     font-size: 22px;
     outline:none;
+    &_error {
+      background-color: darkred;
+    }
   }
 
   &__input:focus {
     background-color: antiquewhite;
   }
+
 
   &__wrapper {
     display: flex;

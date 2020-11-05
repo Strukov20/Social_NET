@@ -1,16 +1,20 @@
 import React from 'react';
-import {Field, reduxForm} from "redux-form";
+import {Field} from "redux-form";
 import '../components/Profile/Profile.scss';
+import {maxLengthCreator, required} from "../utils/validators/validators";
+import {InputArea} from "../components/common/FormsControls/ProfileFormControls";
 
-const AddPostForm = (props) => {
+const maxLength10 = maxLengthCreator(30)
+
+const AddNewPostForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className="form__wrapper">
             <div>
                 <Field
-                    component={"input"}
+                    component={InputArea}
                     placeholder="Enter your news..."
                     name="newPostText"
-                    className="form__input"
+                    validate={[required, maxLength10]}
                 />
             </div>
             <div >
@@ -21,4 +25,4 @@ const AddPostForm = (props) => {
 }
 
 
-export default AddPostForm;
+export default AddNewPostForm;

@@ -6,19 +6,7 @@
     background: var(--main-color);
     color: white;
     margin: auto auto;
-    &_loginField {
-      border: 1px solid black;
-      border-radius: 15px;
-      width: 275px;
-      height: 30px;
-      padding-left: 15px ;
-      outline: none;
-      background: var(--second-color);
-      &:focus {
-        background: white;
-      }
-    }
-    &_passwordField {
+    &_authField {
       margin: 10px 0;
       border: 1px solid black;
       border-radius: 15px;
