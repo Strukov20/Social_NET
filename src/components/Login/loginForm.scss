@@ -6,6 +6,9 @@
     background: var(--main-color);
     color: white;
     margin: auto auto;
+    &_error {
+      background-color: #CB2D6F;
+    }
     &_authField {
       margin: 10px 0;
       border: 1px solid black;

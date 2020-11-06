@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Route, withRouter} from "react-router-dom";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/settings";
 import {SideBar} from "./components/SideBar/sideBar";
@@ -11,27 +11,38 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
+import {connect} from "react-redux";
+import {getAuthUserData} from "./redux/auth-reducer";
+import {compose} from "redux";
 
 
-const App = () => {
-    return (
+class App extends React.Component {
+    componentDidMount() {
+        this.props.getAuthUserData();
+    }
+
+    render() {
+        return (
             <BrowserRouter>
                 <div className='wrapper'>
-                    <HeaderContainer />
+                    <HeaderContainer/>
                     <div className='content-wrapper'>
-                        <Navbar />
-                        <Route path='/profile/:userId?' render={ () => <ProfileContainer /> }/>
-                        <Route path='/dialogs' render={ () => <DialogsContainer /> }/>
-                        <Route path='/friends' render={ () => <SideBar /> } />
-                        <Route path='/news' render={ () => <News /> }/>
-                        <Route path='/audio' render={ () => <Music /> }/>
-                        <Route path='/settings' render={ () => <Settings /> }/>
-                        <Route path='/users' render={ () => <UsersContainer /> }/>
-                        <Route path='/login' render={ () => <Login /> }/>
+                        <Navbar/>
+                        <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
+                        <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                        <Route path='/friends' render={() => <SideBar/>}/>
+                        <Route path='/news' render={() => <News/>}/>
+                        <Route path='/audio' render={() => <Music/>}/>
+                        <Route path='/settings' render={() => <Settings/>}/>
+                        <Route path='/users' render={() => <UsersContainer/>}/>
+                        <Route path='/login' render={() => <Login/>}/>
                     </div>
                 </div>
             </BrowserRouter>
         )
+    }
 }
 
-export default App;
+export default compose(
+    withRouter,
+    connect(null, {getAuthUserData}))(App);

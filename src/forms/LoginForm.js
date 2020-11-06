@@ -10,6 +10,7 @@ const LoginForm = (props) => {
                 <Field
                     placeholder={"Email"}
                     name='email'
+                    type="email"
                     component={InputArea}
                     validate={[required]}
                 />
@@ -18,6 +19,7 @@ const LoginForm = (props) => {
                 <Field
                     placeholder={"Password"}
                     name='password'
+                    type="password"
                     component={InputArea}
                     validate={[required]}
                 />
@@ -30,6 +32,11 @@ const LoginForm = (props) => {
                     name={'rememberMe'}
                 />Remember me
             </div>
+            { props.error &&
+                <div className="login_form_error">
+                    {props.error}
+                </div>
+            }
             <div className="login_form_buttons">
                 <button className="login_form_loginButton">Login</button>
                 <button className="login_form_forgotButton">Forgot Password?</button>
