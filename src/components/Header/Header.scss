@@ -1,4 +1,9 @@
 
+.logoutButton{
+  width: 50px;
+  margin: 0 0 0 40px;
+  cursor: pointer;
+}
 .app {
   &__header {
     display: flex;
@@ -23,16 +28,7 @@
     margin-left: auto;
     padding: 0 350px;
     &_button {
-      border: 1px  solid darkgrey;
-      border-radius: 20px;
-      background-color: #ecc63e;
-      width: 140px;
-      height: 40px;
-      text-align: center;
-      text-decoration: none;
-      color: black;
-      font-weight: bold;
-      font-size: 26px;
+      width: 50px;
     }
     &_wrapper {
       display: flex;

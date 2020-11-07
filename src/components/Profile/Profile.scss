@@ -72,13 +72,10 @@
 
   &__title {
     color: white;
-    font-family: Lato;
+    font-family: "Comic Sans MS";
     font-size: 45px;
     text-align: left;
     padding: 0 80px;
-    font-weight: bold;
-    font-style: italic;
-
   }
 
   &__input {
@@ -86,10 +83,11 @@
     background-color: aliceblue;
     width: 600px;
     height: 46px;
-    border-radius: 30px;
+    border-radius: 17px;
     padding: 0 30px;
     margin: 0 0 30px 80px;
-    font-size: 22px;
+    font-size: 25px;
+    font-family: "Monotype Corsiva";
     outline:none;
     &_error {
       background-color: darkred;
@@ -107,15 +105,18 @@
   }
 
   &__button {
-    background-color: var(--main-color);
-    width: 150px;
+    text-transform: uppercase;
+    padding: 10px 0 ;
+    margin-left: 20px;
+    width: 140px;
     height: 50px;
-    border-radius: 30px;
-    text-decoration: none;
-    color: azure;
-    font-size: 20px;
-    margin: 0 30px;
-    outline:none;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #ff3939;
+    color: white;
+    outline: none;
+    border-radius: 20px;
+    font-family: "Comic Sans MS";
   }
 }
 
@@ -141,11 +142,16 @@
   &__title {
     margin: auto 50px;
     font-size: 26px;
+    font-family: "Comic Sans MS";
   }
 
   &__like {
     font-size: 25px;
-    margin: auto 0 auto auto;
+    margin: auto 20px auto auto;
     text-align: right;
+    font-family: "Comic Sans MS";
+    &_span {
+      margin-right: 7px;
+    }
   }
 }

@@ -3,6 +3,8 @@ import './Header.scss';
 import {NavLink} from "react-router-dom";
 import userPhoto from "../../assets/img/user_img.svg";
 import logo from "../../assets/img/secondlogo.png"
+import logout from "../../assets/img/logout.svg"
+import login from "../../assets/img/login.svg"
 
 const Header = (props) => {
     return (
@@ -15,10 +17,11 @@ const Header = (props) => {
                 {props.isAuth
                     ?  <div className="app__login__block_wrapper">
                             <img className="app__login__block_img" src={userPhoto} />
-                            <div className="app__login__block_login">{props.login} - <button onClick={props.logout}>Log Out</button> </div>
+                            <div className="app__login__block_login">{props.login}</div>
+                            <img onClick={props.logout} src={logout} alt="logout" className='logoutButton'/>
                         </div>
 
-                    : <NavLink className="app__login__block_button" to={'/login'}>Log In</NavLink>}
+                    : <NavLink to={'/login'}><img onClick={props.logout} src={login} alt="login" className="app__login__block_button"/></NavLink>}
             </div>
         </header>
     )

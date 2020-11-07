@@ -34,10 +34,10 @@
     }
   }
   .vertical-line {
-    margin: 0 20px;
-    border-left: 3px solid ;
+    margin: 20px 20px;
+    border-left: 1px solid ;
     height: 740px;
-    color: #009191;
+    color: darkgray;
   }
 
   &__mess-items {
@@ -88,25 +88,27 @@
     left: 46%;
     bottom: 7%;
     &__input {
-      padding: 15px 20px;
+      font-family: "Monotype Corsiva";
+      font-style: italic;
+      padding: 10px 20px;
       width: 400px;
       border: 1px solid darkgray;
       border-radius: 15px;
-      font-size: 16px;
+      font-size: 24px;
       outline:none;
     }
     &__button {
+      font-family: "Comic Sans MS";
+      text-transform: uppercase;
       margin-left: 20px;
-      width: 120px;
+      width: 128px;
       height: 50px;
-      border: 1px solid darkgray;
-      border-radius: 40px;
-      background: var(--main-color);
-      text-decoration: none;
-      color: white;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
-      outline:none;
+      background-color: #ff3939;
+      color: white;
+      outline: none;
+      border-radius: 20px;
     }
   }
 }
