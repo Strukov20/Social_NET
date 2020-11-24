@@ -2,6 +2,7 @@ import React from 'react';
 import {Preloader} from "../../common/preloader/Preloader";
 import userPhoto from "../../../assets/img/avatar.svg";
 import ProfileStatus from "./ProfileStatus";
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
 
@@ -33,7 +34,7 @@ const ProfileInfo = (props) => {
                     <a className="user__item" href="https://github.com/Strukov20">&nbsp;{props.profile.contacts.github !== null ? props.profile.contacts.github : 'No information available'}</a>
                 </div>
                 <div className="user__title">Status:
-                    <ProfileStatus className="profile_status_wrapper" status={props.status} updateStatus={props.updateStatus}/>
+                    <ProfileStatusWithHooks className="profile_status_wrapper" status={props.status} updateStatus={props.updateStatus}/>
                 </div>
             </div>
         </div>
