@@ -23,9 +23,7 @@ const initialState = {
 
 export const SideBar = () => {
 
-    const friendsElements = initialState.sideBar.map(src => <FriendItem name={src.name} surname={src.surname} img={src.img} online={src.online} />)
-
-
+    const friendsElements = initialState.sideBar.map(src => <FriendItem key={src.id} name={src.name} surname={src.surname} img={src.img} online={src.online} />)
 
     return(
         <div className="sidebar">

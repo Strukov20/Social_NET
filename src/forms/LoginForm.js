@@ -1,47 +1,24 @@
 import React from 'react';
-import {Field, reduxForm} from "redux-form";
+import {reduxForm} from "redux-form";
 import {InputArea} from "../components/common/FormsControls/LoginFormControls";
 import {required} from "../utils/validators/validators";
+import {CreateField} from "../components/common/FormsControls/CreateField";
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
     return (
-        <form onSubmit={props.handleSubmit}>
-            <div>
-                <Field
-                    placeholder={"Email"}
-                    name='email'
-                    type="email"
-                    component={InputArea}
-                    validate={[required]}
-                />
-            </div>
-            <div>
-                <Field
-                    placeholder={"Password"}
-                    name='password'
-                    type="password"
-                    component={InputArea}
-                    validate={[required]}
-                />
-            </div>
-            <div>
-                <Field
-                    className="login_form_checkbox"
-                    type="checkbox"
-                    component={'input'}
-                    name={'rememberMe'}
-                />Remember me
-            </div>
-            { props.error &&
+        <form onSubmit={handleSubmit}>
+            {CreateField("Email", 'email', [required], InputArea, {type: 'email'})}
+            {CreateField("Password", 'password', [required], InputArea, {type: 'password'})}
+            {CreateField('checkbox', 'rememberMe', null, 'input', {type: 'checkbox'}, 'rememberMe',  "login_form_checkbox")}
+            { error &&
                 <div className="login_form_error">
-                    {props.error}
+                    {error}
                 </div>
             }
             <div className="login_form_buttons">
                 <button className="login_form_loginButton">Login</button>
                 <button className="login_form_forgotButton">Forgot Password?</button>
             </div>
-
         </form>
     )
 }
