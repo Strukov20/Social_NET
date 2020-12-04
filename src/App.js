@@ -5,10 +5,8 @@ import {BrowserRouter, Route, withRouter} from "react-router-dom";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/settings";
 import {SideBar} from "./components/SideBar/sideBar";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import News from "./components/News/news";
 import UsersContainer from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import {connect} from "react-redux";
@@ -16,6 +14,8 @@ import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import {Preloader} from "./components/common/preloader/Preloader";
 
+const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
+const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
 
 class App extends React.Component {
     componentDidMount() {
@@ -32,8 +32,14 @@ class App extends React.Component {
                     <HeaderContainer/>
                     <div className='content-wrapper'>
                         <Navbar/>
-                        <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
-                        <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                        <Route path='/profile/:userId?' render={() => {
+                            return <React.Suspense fallback={<div>Loading...</div>}>
+                                        <ProfileContainer/>
+                                   </React.Suspense>}}/>
+                        <Route path='/dialogs' render={() => {
+                            return <React.Suspense fallback={<div>Loading...</div>}>
+                                        <DialogsContainer/>
+                                   </React.Suspense>}}/>
                         <Route path='/friends' render={() => <SideBar/>}/>
                         <Route path='/news' render={() => <News/>}/>
                         <Route path='/audio' render={() => <Music/>}/>
