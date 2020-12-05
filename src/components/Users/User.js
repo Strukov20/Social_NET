@@ -16,7 +16,7 @@ export const User = ({user, followingInProgress, unfollow, follow}) => {
                 <div>
                     {user.followed
                         ? <button disabled={followingInProgress.some(id => id === user.id)} className="users__button"
-                                  onClick={() => {unfollow(user.id)}}> Unfollow </button>
+                                  onClick={() => {unfollow(user.id)}}>Unfollow</button>
 
                         : <button disabled={followingInProgress.some(id => id === user.id)} className="users__button_follow"
                                   onClick={() => {follow(user.id)}}> Follow </button>
