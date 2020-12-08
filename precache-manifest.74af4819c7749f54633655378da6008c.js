@@ -1,43 +1,43 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f18b6a9df6f3608d071c1261ef49fe11",
+    "revision": "88b5ef91c0b3831595c70d7d2e5beb3e",
     "url": "/Social_NET/index.html"
   },
   {
-    "revision": "e22a1b6e03e4aee686da",
-    "url": "/Social_NET/static/css/3.24a4b70e.chunk.css"
+    "revision": "74b0fac177b295d29acb",
+    "url": "/Social_NET/static/css/3.541c5638.chunk.css"
   },
   {
-    "revision": "3a5437efa31b8c507354",
+    "revision": "77f1b244e47189cacf7f",
     "url": "/Social_NET/static/css/4.5c65787b.chunk.css"
   },
   {
-    "revision": "b2813baaa5f37cc4873e",
+    "revision": "195e3272e5ec84c59320",
     "url": "/Social_NET/static/css/main.4ec980e8.chunk.css"
   },
   {
-    "revision": "98df19c78f3c41ea4f4e",
-    "url": "/Social_NET/static/js/2.ba1bb9af.chunk.js"
+    "revision": "c522b83b94e7838fafac",
+    "url": "/Social_NET/static/js/2.68608a65.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/Social_NET/static/js/2.ba1bb9af.chunk.js.LICENSE.txt"
+    "url": "/Social_NET/static/js/2.68608a65.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e22a1b6e03e4aee686da",
-    "url": "/Social_NET/static/js/3.aeffe51c.chunk.js"
+    "revision": "74b0fac177b295d29acb",
+    "url": "/Social_NET/static/js/3.ddefce5c.chunk.js"
   },
   {
-    "revision": "3a5437efa31b8c507354",
-    "url": "/Social_NET/static/js/4.c5fd075a.chunk.js"
+    "revision": "77f1b244e47189cacf7f",
+    "url": "/Social_NET/static/js/4.6fe795bb.chunk.js"
   },
   {
-    "revision": "b2813baaa5f37cc4873e",
-    "url": "/Social_NET/static/js/main.e3da1044.chunk.js"
+    "revision": "195e3272e5ec84c59320",
+    "url": "/Social_NET/static/js/main.4faf4c62.chunk.js"
   },
   {
-    "revision": "ad9109e9e0b0a6684d42",
-    "url": "/Social_NET/static/js/runtime-main.0515e5ba.js"
+    "revision": "86c40bd4465df962272c",
+    "url": "/Social_NET/static/js/runtime-main.0f70b919.js"
   },
   {
     "revision": "cd9f6d3ad366512f4ee6169368f7efee",
